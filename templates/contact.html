@@ -43,7 +43,7 @@
         
         <div>
             <h3 style="color: var(--maroon); margin-bottom: 1.5rem; font-size: 1.5rem;">Send Us a Message</h3>
-            <form method="POST" action="#" style="background: var(--gray-light); padding: 2rem; border-radius: 12px;" onsubmit="return validateContactForm(this);">
+            <form method="POST" action="#" style="background: var(--gray-light); padding: 2rem; border-radius: 12px;">
                 <div class="form-group">
                     <label>Your Name *</label>
                     <input type="text" name="name" required>
@@ -71,4 +71,10 @@
             <p style="color: var(--gray); font-size: 1.125rem; margin-bottom: 1rem;">
                 📍 Map Integration Placeholder
             </p>
-            <p style="color: var(--gray
+            <p style="color: var(--gray); max-width: 500px; text-align: center; padding: 0 2rem;">
+                To integrate Google Maps: Add your Google Maps embed code here, or use Mapbox, OpenStreetMap, or any other mapping service.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
