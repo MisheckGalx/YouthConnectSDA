@@ -1,5 +1,5 @@
 /* ==========================================
-   CLAYVILLE SDA CHURCH - MAIN STYLESHEET
+   CLAYVILLE SDA CHURCH - POLISHED STYLESHEET
    Premium Design | White, Gray, Maroon, Black
    ========================================== */
 
@@ -18,16 +18,18 @@
     --gray-dark: #4b5563;
     --black: #1f2937;
     --white: #ffffff;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-    --shadow-lg: 0 12px 24px rgba(0,0,0,0.15);
-    --transition: all 0.3s ease;
+
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+    --shadow-md: 0 6px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 24px rgba(0,0,0,0.1);
+
+    --transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     color: var(--black);
-    line-height: 1.6;
+    line-height: 1.65;
     background: var(--white);
     overflow-x: hidden;
 }
@@ -50,7 +52,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
 }
 
 .logo {
@@ -77,17 +79,18 @@ nav {
     color: var(--white);
     font-weight: bold;
     font-size: 1.5rem;
-    box-shadow: 0 2px 8px rgba(128,0,32,0.2);
+    box-shadow: 0 2px 6px rgba(128,0,32,0.2);
 }
 
 .logo-text {
     font-size: 1.25rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     list-style: none;
 }
 
@@ -97,12 +100,13 @@ nav {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    padding: 0.25rem 0.5rem;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -3px;
     left: 0;
     width: 0;
     height: 2px;
@@ -124,6 +128,7 @@ nav {
 
 .hero-slider {
     position: relative;
+    min-height: 60vh;
     height: 600px;
     overflow: hidden;
 }
@@ -148,21 +153,22 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+    background: linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: var(--white);
     text-align: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 .slide-overlay h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     animation: fadeInUp 1s ease;
 }
 
@@ -170,7 +176,8 @@ nav {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     max-width: 800px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+    letter-spacing: 0.2px;
     animation: fadeInUp 1s ease 0.2s backwards;
 }
 
@@ -180,15 +187,9 @@ nav {
     animation: fadeInUp 1s ease 0.4s backwards;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.cta-buttons .btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(128,0,32,0.15);
 }
 
 /* ==========================================
@@ -198,7 +199,7 @@ nav {
 .btn {
     padding: 1rem 2rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -214,8 +215,8 @@ nav {
 
 .btn-primary:hover {
     background: var(--maroon-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(128,0,32,0.3);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(128,0,32,0.15);
 }
 
 .btn-secondary {
@@ -227,8 +228,8 @@ nav {
 .btn-secondary:hover {
     background: var(--maroon);
     color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(128,0,32,0.3);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(128,0,32,0.15);
 }
 
 .btn-danger {
@@ -238,42 +239,13 @@ nav {
 
 .btn-danger:hover {
     background: #b91c1c;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(220,38,38,0.3);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(220,38,38,0.15);
 }
 
 .btn-small {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
-}
-
-/* ==========================================
-   CONTAINER & SECTIONS
-   ========================================== */
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-heading h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--maroon);
-    font-weight: 700;
-}
-
-.section-heading p {
-    font-size: 1.125rem;
-    color: var(--gray);
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 /* ==========================================
@@ -283,19 +255,19 @@ nav {
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -303,10 +275,11 @@ nav {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    border-radius: 12px 12px 0 0;
 }
 
 .card-content {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .card-title {
@@ -314,6 +287,7 @@ nav {
     margin-bottom: 0.5rem;
     color: var(--black);
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .card-meta {
@@ -335,7 +309,7 @@ nav {
 footer {
     background: var(--black);
     color: var(--white);
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     text-align: center;
     margin-top: 4rem;
 }
@@ -345,7 +319,7 @@ footer p {
 }
 
 footer a {
-    color: var(--maroon-light);
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
     transition: var(--transition);
 }
@@ -356,118 +330,18 @@ footer a:hover {
 }
 
 /* ==========================================
-   ADMIN PANEL
+   ANIMATIONS
    ========================================== */
 
-.admin-container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 2rem;
-}
-
-.admin-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.admin-header h1 {
-    color: var(--maroon);
-    font-size: 2rem;
-}
-
-.admin-grid {
-    display: grid;
-    gap: 2rem;
-}
-
-.admin-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
-}
-
-.admin-card h2 {
-    margin-bottom: 1.5rem;
-    color: var(--maroon);
-    font-size: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--black);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid var(--gray-light);
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--maroon);
-    box-shadow: 0 0 0 3px rgba(128,0,32,0.1);
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.alert {
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-.alert-success {
-    background: #d1fae5;
-    color: #065f46;
-    border-left: 4px solid #10b981;
-}
-
-.alert-error {
-    background: #fee2e2;
-    color: #991b1b;
-    border-left: 4px solid #ef4444;
-}
-
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-}
-
-.admin-table th,
-.admin-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--gray-light);
-}
-
-.admin-table th {
-    background: var(--gray-light);
-    font-weight: 600;
-    color: var(--black);
-}
-
-.admin-table tr:hover {
-    background: var(--gray-light);
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ==========================================
@@ -481,7 +355,7 @@ footer a:hover {
     }
     
     .hero-slider {
-        height: 400px;
+        height: 50vh;
     }
     
     .slide-overlay h1 {
@@ -538,9 +412,7 @@ footer a:hover {
    UTILITY CLASSES
    ========================================== */
 
-.text-center {
-    text-align: center;
-}
+.text-center { text-align: center; }
 
 .mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
