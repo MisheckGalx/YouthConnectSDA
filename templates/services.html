@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Services - Clayville SDA Church{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="section-heading">
+        <h2>Service Times & Programs</h2>
+        <p>Join us for worship, prayer, and fellowship throughout the week</p>
+    </div>
+    
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-content">
+                <h3 class="card-title">Sabbath School</h3>
+                <p class="card-meta">Saturdays • 9:30 AM</p>
+                <p class="card-description">
+                    Interactive Bible study for all ages. Classes available for children, youth, and adults. 
+                    Dive deep into God's Word in a welcoming small group setting.
+                </p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <h3 class="card-title">Divine Worship</h3>
+                <p class="card-meta">Saturdays • 11:00 AM</p>
+                <p class="card-description">
+                    Our main worship service featuring inspiring preaching, uplifting music, and communion 
+                    with fellow believers. All are welcome to join us.
+                </p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <h3 class="card-title">Prayer Meeting</h3>
+                <p class="card-meta">Wednesdays • 7:00 PM</p>
+                <p class="card-description">
+                    Midweek prayer and Bible study. Come share your prayer requests, study Scripture together, 
+                    and strengthen your walk with God.
+                </p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <h3 class="card-title">Youth Ministry</h3>
+                <p class="card-meta">Fridays • 6:00 PM</p>
+                <p class="card-description">
+                    Dynamic programs for teens and young adults including worship, games, and meaningful 
+                    discussions about faith and life.
+                </p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <h3 class="card-title">Children's Programs</h3>
+                <p class="card-meta">Saturdays • 9:30 AM & 11:00 AM</p>
+                <p class="card-description">
+                    Age-appropriate programs for infants through elementary. Fun, engaging lessons that 
+                    teach children about God's love.
+                </p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <h3 class="card-title">Community Service</h3>
+                <p class="card-meta">Monthly • Various Times</p>
+                <p class="card-description">
+                    Outreach programs including food pantry, health clinics, and community support. 
+                    Check our events page for upcoming service opportunities.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="background: var(--maroon); color: white; padding: 3rem; border-radius: 12px; margin-top: 4rem; text-align: center;">
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Join Us This Sabbath</h3>
+        <p style="font-size: 1.125rem; margin-bottom: 1.5rem;">
+            Whether you're visiting for the first time or looking for a church home, we'd love to meet you!
+        </p>
+        <a href="{{ url_for('contact') }}" class="btn btn-secondary">Get Directions</a>
+    </div>
+    
+    <div style="max-width: 800px; margin: 4rem auto 0; text-align: center;">
+        <h3 style="color: var(--maroon); margin-bottom: 1.5rem; font-size: 1.75rem;">What to Expect</h3>
+        <div style="display: grid; gap: 1.5rem; text-align: left;">
+            <div>
+                <h4 style="color: var(--black); margin-bottom: 0.5rem;">Dress Code</h4>
+                <p style="color: var(--gray); line-height: 1.6;">
+                    Come as you are! We welcome casual to formal attire. The most important thing is your presence.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: var(--black); margin-bottom: 0.5rem;">Parking & Accessibility</h4>
+                <p style="color: var(--gray); line-height: 1.6;">
+                    Free parking available on-site. Our building is wheelchair accessible with handicap parking near the entrance.
+                </p>
+            </div>
+            <div>
+                <h4 style="color: var(--black); margin-bottom: 0.5rem;">Children's Care</h4>
+                <p style="color: var(--gray); line-height: 1.6;">
+                    Nursery and children's programs available during services. Our trained volunteers provide a safe, nurturing environment.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
