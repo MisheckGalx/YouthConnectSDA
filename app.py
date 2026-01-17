@@ -55,6 +55,21 @@ def contact():
     """Contact page"""
     return render_template('contact.html')
 
+@app.route('/gallery')
+def gallery():
+    """Photo gallery page"""
+    # List of photos with captions and dates
+    photos = [
+        {'url': '/static/gallery/photo1.jpg', 'caption': 'Sunday Worship Service', 'date': 'January 2024'},
+        {'url': '/static/gallery/photo2.jpg', 'caption': 'Youth Fellowship Event', 'date': 'January 2024'},
+        {'url': '/static/gallery/photo3.jpg', 'caption': 'Community Outreach', 'date': 'December 2023'},
+        {'url': '/static/gallery/photo4.jpg', 'caption': 'Baptism Ceremony', 'date': 'December 2023'},
+        {'url': '/static/gallery/photo5.jpg', 'caption': 'Prayer Meeting', 'date': 'November 2023'},
+        {'url': '/static/gallery/photo6.jpg', 'caption': 'Sabbath School Class', 'date': 'November 2023'},
+        # Add more photos here as you upload them
+    ]
+    return render_template('gallery.html', photos=photos)
+
 # Admin routes
 @app.route('/admin/login', methods=['GET', 'POST'])
 def admin_login():
