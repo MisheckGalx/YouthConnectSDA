@@ -1,10 +1,15 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from database import init_db
 from models import User, Event, Sermon
 
 app = Flask(__name__)
 app.secret_key = 'clayville-sda-secret-key-change-this-in-production'
+
+# Serve static files
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 # Flask-Login setup
 login_manager = LoginManager()
