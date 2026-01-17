@@ -5,7 +5,38 @@
 {% block content %}
 <!-- Hero Slider -->
 <div class="hero-slider">
-    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=1600&q=80');">
+    <div class="slide active" style="background-image: url('/static/hero1.jpg');">
+    <div class="slide-overlay">
+        <h1>Clayville SDA Church</h1>
+        <p>Proclaiming the Gospel. Serving the Community. Preparing for Christ's Return.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('services') }}" class="btn btn-primary">Plan Your Visit</a>
+            <a href="{{ url_for('sermons') }}" class="btn btn-secondary">Watch Sermons</a>
+        </div>
+    </div>
+</div>
+
+<div class="slide" style="background-image: url('/static/hero2.jpg');">
+    <div class="slide-overlay">
+        <h1>Join Our Community</h1>
+        <p>A welcoming church family committed to worship and service.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More</a>
+            <a href="{{ url_for('events') }}" class="btn btn-secondary">View Events</a>
+        </div>
+    </div>
+</div>
+
+<div class="slide" style="background-image: url('/static/hero3.jpg');">
+    <div class="slide-overlay">
+        <h1>Growing in Faith</h1>
+        <p>Bible study, prayer meetings, and programs for all ages.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('services') }}" class="btn btn-primary">Service Times</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Get Connected</a>
+        </div>
+    </div>
+</div>
         <div class="slide-overlay">
             <h1>Clayville Gardens Seventh Day Adventist Church</h1>
             <p>Proclaiming the Gospel. Serving the Community. Preparing for Christ's Return.</p>
