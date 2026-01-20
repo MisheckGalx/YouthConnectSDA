@@ -60,12 +60,26 @@ def gallery():
     """Photo gallery page"""
     # List of photos with captions and dates
     photos = [
-        {'url': '/static/gallery/photo1.jpg', 'caption': 'Sunday Worship Service', 'date': 'January 2024'},
-        {'url': '/static/gallery/photo2.jpg', 'caption': 'Youth Fellowship Event', 'date': 'January 2024'},
-        {'url': '/static/gallery/photo3.jpg', 'caption': 'Community Outreach', 'date': 'December 2023'},
-        {'url': '/static/gallery/photo4.jpg', 'caption': 'Baptism Ceremony', 'date': 'December 2023'},
-        {'url': '/static/gallery/photo5.jpg', 'caption': 'Prayer Meeting', 'date': 'November 2023'},
-        {'url': '/static/gallery/photo6.jpg', 'caption': 'Sabbath School Class', 'date': 'November 2023'},
+        {'url': '/static/gallery/photo1.jpg'},
+        {'url': '/static/gallery/photo2.jpg'},
+        {'url': '/static/gallery/photo3.jpg'},
+        {'url': '/static/gallery/photo4.jpg'},
+        {'url': '/static/gallery/photo5.jpg'},
+        {'url': '/static/gallery/photo6.jpg'},
+        {'url': '/static/gallery/photo7.jpg'},
+        {'url': '/static/gallery/photo8.jpg'},
+        {'url': '/static/gallery/photo9.jpg'},
+        {'url': '/static/gallery/photo10.jpg'},
+        {'url': '/static/gallery/photo11.jpg'},
+        {'url': '/static/gallery/photo12.jpg'},
+        {'url': '/static/gallery/photo13.jpg'},
+        {'url': '/static/gallery/photo14.jpg'},
+        {'url': '/static/gallery/photo15.jpg'},
+        {'url': '/static/gallery/photo16.jpg'},
+        {'url': '/static/gallery/photo17.jpg'},
+        {'url': '/static/gallery/photo18.jpg'},
+        {'url': '/static/gallery/photo19.jpg'},
+        {'url': '/static/gallery/photo20.jpg'},
         # Add more photos here as you upload them
     ]
     return render_template('gallery.html', photos=photos)
