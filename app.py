@@ -78,8 +78,6 @@ def gallery():
         {'url': '/static/gallery/photo16.jpg'},
         {'url': '/static/gallery/photo17.jpg'},
         {'url': '/static/gallery/photo18.jpg'},
-        {'url': '/static/gallery/photo19.jpg'},
-        {'url': '/static/gallery/photo20.jpg'},
         # Add more photos here as you upload them
     ]
     return render_template('gallery.html', photos=photos)
