@@ -1,11 +1,9 @@
-/* ==================================================
-   CLAYVILLE SDA CHURCH — CLEAN, STABLE, POLISHED
-   Design Language: Calm • Premium • Trustworthy
-   ================================================== */
+/* ==========================================
+   CLAYVILLE SDA CHURCH — REFINED PREMIUM CSS
+   Apple / Nike Level Polish (No Redesign)
+   ========================================== */
 
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,45 +12,46 @@
 :root {
     --maroon: #800020;
     --maroon-dark: #5a0017;
-    --gray-900: #1d1d1f;
-    --gray-700: #515154;
-    --gray-500: #86868b;
-    --gray-100: #f5f5f7;
-    --white: #ffffff;
-    --black: #000000;
+    --maroon-light: #a6002a;
 
-    --radius-sm: 12px;
+    --gray: #6b7280;
+    --gray-light: #f5f5f7;
+    --gray-dark: #374151;
+
+    --black: #1d1d1f;
+    --white: #ffffff;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
     --radius-lg: 20px;
 
-    --shadow-sm: 0 4px 20px rgba(0,0,0,0.06);
+    --shadow-sm: 0 4px 20px rgba(0,0,0,0.04);
     --shadow-md: 0 12px 40px rgba(0,0,0,0.08);
     --shadow-lg: 0 30px 60px rgba(0,0,0,0.12);
 
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--black);
     background: var(--white);
-    color: var(--gray-900);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-/* ==================================================
+/* ==========================================
    NAVIGATION
-   ================================================== */
+   ========================================== */
+
 nav {
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--white);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .nav-container {
@@ -60,8 +59,17 @@ nav {
     margin: 0 auto;
     padding: 1.2rem 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--black);
+    transition: var(--transition);
 }
 
 .logo-symbol {
@@ -77,17 +85,34 @@ nav {
     letter-spacing: 0.02em;
 }
 
+.logo-text {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 2rem;
+    list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
-    font-size: 0.95rem;
+    color: var(--gray-dark);
     font-weight: 500;
-    color: var(--gray-700);
+    font-size: 0.95rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--maroon);
     transition: var(--transition);
 }
 
@@ -95,12 +120,16 @@ nav {
     color: var(--black);
 }
 
-/* ==================================================
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
    HERO SLIDER
-   ================================================== */
+   ========================================== */
+
 .hero-slider {
     position: relative;
-    width: 100%;
     height: 600px;
     overflow: hidden;
     background: #111;
@@ -112,7 +141,7 @@ nav {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease;
 }
 
 .slide.active {
@@ -123,37 +152,49 @@ nav {
 .slide-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.6)
+    );
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--white);
     text-align: center;
     padding: 2rem;
-    color: var(--white);
 }
 
 .slide-overlay h1 {
-    font-size: 3.4rem;
+    font-size: 3.3rem;
     font-weight: 800;
     letter-spacing: -0.03em;
-    max-width: 900px;
+    margin-bottom: 1rem;
 }
 
-/* ==================================================
+.slide-overlay p {
+    font-size: 1.4rem;
+    max-width: 780px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* ==========================================
    BUTTONS
-   ================================================== */
+   ========================================== */
+
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     padding: 12px 30px;
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
     border: none;
-    transition: var(--transition);
+    cursor: pointer;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
 }
 
 .btn-primary {
@@ -177,62 +218,34 @@ nav {
     color: var(--white);
 }
 
-/* ==================================================
-   LAYOUT / SECTIONS
-   ================================================== */
+/* ==========================================
+   SECTIONS & CONTAINERS
+   ========================================== */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 5rem 2rem;
 }
 
-.admin-card,
-.contact-form-container {
-    background: var(--white);
-    padding: 2.8rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
+.section-heading h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--maroon);
 }
 
-/* ==================================================
-   FORMS
-   ================================================== */
-.form-group {
-    margin-bottom: 1.6rem;
+.section-heading p {
+    color: var(--gray);
+    max-width: 720px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid transparent;
-    background: var(--gray-100);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--maroon);
-    background: var(--white);
-}
-
-/* ==================================================
+/* ==========================================
    CARDS
-   ================================================== */
+   ========================================== */
+
 .card {
     background: var(--white);
     border-radius: var(--radius-lg);
-    overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
@@ -242,30 +255,62 @@ nav {
     box-shadow: var(--shadow-md);
 }
 
-/* ==================================================
+.card-image {
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.75rem;
+}
+
+.card-title {
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.card-description {
+    color: var(--gray);
+}
+
+/* ==========================================
+   FORMS
+   ========================================== */
+
+.form-group input,
+.form-group textarea {
+    background: var(--gray-light);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: var(--white);
+    border-color: var(--maroon);
+}
+
+/* ==========================================
    FOOTER
-   ================================================== */
+   ========================================== */
+
 footer {
     background: var(--black);
-    color: var(--white);
+    color: rgba(255,255,255,0.85);
     padding: 4.5rem 2rem;
     text-align: center;
     font-size: 0.9rem;
 }
 
-/* ==================================================
+/* ==========================================
    RESPONSIVE
-   ================================================== */
+   ========================================== */
+
 @media (max-width: 768px) {
-    .hero-slider {
-        height: 450px;
-    }
-
-    .slide-overlay h1 {
-        font-size: 2.2rem;
-    }
-
-    .nav-links {
-        gap: 1.4rem;
-    }
+    .hero-slider { height: 420px; }
+    .slide-overlay h1 { font-size: 2.2rem; }
+    .slide-overlay p { font-size: 1.15rem; }
 }
