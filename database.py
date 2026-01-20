@@ -34,7 +34,7 @@ def init_db():
     c.execute("SELECT * FROM users WHERE username='admin'")
     if not c.fetchone():
         from werkzeug.security import generate_password_hash
-        password_hash = generate_password_hash('clayville2024')
+        password_hash = generate_password_hash('clayville007')
         c.execute("INSERT INTO users (username, password_hash) VALUES (?, ?)", 
                  ('admin', password_hash))
         print("✓ Admin user created (username: admin, password: clayville2024)")
