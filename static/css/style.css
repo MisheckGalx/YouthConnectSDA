@@ -1,66 +1,65 @@
 /* ==========================================
-   CLAYVILLE SDA CHURCH - ULTIMATE PREMIUM
-   Inspired by Apple/Nike Design Language
+   CLAYVILLE SDA CHURCH - POLISHED ORIGINAL
+   Nike & Apple Inspired Refinement
    ========================================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased; /* Smoother text rendering like Apple */
+    -webkit-font-smoothing: antialiased; /* Apple-style sharp text */
 }
 
 :root {
-    /* Refined Color Palette */
     --maroon: #800020;
-    --maroon-dark: #4a0012;
-    --maroon-light: #a61b3c;
+    --maroon-dark: #5a0017;
+    --maroon-light: #a6002a;
+    --gray: #86868b;          /* Refined Apple Gray */
+    --gray-light: #f5f5f7;    /* Subtle Silver */
+    --gray-dark: #1d1d1f;     /* Apple's "Off-Black" */
+    --black: #000000;
+    --white: #ffffff;
     
-    /* Apple-style Neutrals */
-    --bg-white: #fbfbfb;      /* Soft off-white */
-    --text-black: #1d1d1f;    /* Apple's signature text color */
-    --text-gray: #86868b;     /* Muted secondary text */
+    /* Luxury Shadows - More depth, less "dirty" */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+    --shadow-lg: 0 30px 60px rgba(0,0,0,0.12);
     
-    /* Glassmorphism & Elevation */
-    --glass-bg: rgba(251, 251, 253, 0.8);
-    --shadow-premium: 0 20px 40px rgba(0,0,0,0.04);
-    --shadow-hover: 0 30px 60px rgba(0,0,0,0.12);
-    
-    /* Animation */
-    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Motion - Changed to "Ease-Out-Expo" for a more expensive feel */
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
+    /* Updated font stack to prioritize System fonts like Nike/Apple */
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-    color: var(--text-black);
-    line-height: 1.47059; /* Apple's specific line height */
-    background: var(--bg-white);
+    color: var(--gray-dark);
+    line-height: 1.5;
+    background: var(--white);
     overflow-x: hidden;
-    letter-spacing: -0.022em; /* Tighter letter spacing for a premium feel */
+    letter-spacing: -0.015em; /* Tighter tracking for premium look */
 }
 
 /* ==========================================
-   NAVIGATION (Apple Glassmorphism)
+   NAVIGATION
    ========================================== */
 
 nav {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px); /* The "Frosted Glass" effect */
+    background: rgba(255, 255, 255, 0.8); /* Translucent background */
+    backdrop-filter: blur(20px);         /* Frosted glass effect */
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: var(--transition-smooth);
 }
 
 .nav-container {
-    max-width: 1100px; /* Slimmer container for elegance */
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 2rem;
+    padding: 1.2rem 2rem;
 }
 
 .logo {
@@ -68,20 +67,31 @@ nav {
     align-items: center;
     gap: 0.75rem;
     text-decoration: none;
-    color: var(--text-black);
-    transition: var(--transition-smooth);
+    color: var(--black);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    opacity: 0.7; /* Subtler than moving the whole logo */
 }
 
 .logo-symbol {
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
     background: var(--maroon);
-    border-radius: 10px; /* Slightly squircle like iOS icons */
+    border-radius: 12px; /* Changed from circle to "Squircle" */
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.logo-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
 }
 
 .nav-links {
@@ -92,143 +102,165 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-black);
-    font-size: 0.85rem; /* Smaller nav text is more modern */
+    color: var(--gray-dark);
     font-weight: 400;
-    opacity: 0.8;
-    transition: var(--transition-smooth);
+    font-size: 0.85rem; /* Smaller, cleaner text */
+    transition: var(--transition);
 }
 
 .nav-links a:hover {
-    opacity: 1;
     color: var(--maroon);
 }
 
+.nav-links a::after {
+    display: none; /* Removed the underline for a cleaner, minimalist look */
+}
+
 /* ==========================================
-   HERO SECTION (Cinematic Scale)
+   HERO SLIDER
    ========================================== */
 
 .hero-slider {
     position: relative;
-    height: 90vh; /* Takes up most of the screen like Nike */
-    background: #000;
+    height: 85vh; /* Taller hero section for impact */
+    overflow: hidden;
 }
 
 .slide-overlay {
-    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
-    padding: 0 10%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+    padding: 2rem;
 }
 
 .slide-overlay h1 {
-    font-size: 4.5rem; /* Massive, bold typography */
-    letter-spacing: -0.05em;
-    line-height: 1.1;
+    font-size: 4.5rem; /* Massive typography like Nike */
     margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    text-shadow: none; /* Cleaner look without text-shadow */
+}
+
+.slide-overlay p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    opacity: 0.9;
+    font-weight: 400;
 }
 
 /* ==========================================
-   BUTTONS (Nike-Style)
+   BUTTONS
    ========================================== */
 
 .btn {
-    padding: 12px 28px;
-    border-radius: 980px; /* Fully rounded Pill shape like Nike/Apple */
+    padding: 14px 30px;
+    border-radius: 980px; /* Fully rounded "Pill" shape like Nike */
     font-size: 17px;
     font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-    text-decoration: none;
-    display: inline-block;
-    border: none;
+    transition: var(--transition);
 }
 
 .btn-primary {
     background: var(--maroon);
-    color: white;
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background: var(--maroon-light);
-    transform: scale(1.05); /* Slight growth on hover */
+    background: var(--maroon-dark);
+    transform: scale(1.04); /* Modern "Pop" instead of sliding */
 }
 
 .btn-secondary {
-    background: transparent;
-    color: var(--text-black);
-    border: 1px solid var(--text-black);
+    background: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black); /* Thinner, cleaner border */
 }
 
 .btn-secondary:hover {
-    background: var(--text-black);
-    color: white;
+    background: var(--black);
+    color: var(--white);
+    transform: scale(1.04);
 }
 
 /* ==========================================
-   CONTENT SECTIONS (Generous Spacing)
+   CONTAINER & SECTIONS
    ========================================== */
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 8rem 2rem; /* Triple the padding for that "Luxury" feel */
+    padding: 100px 2rem; /* Massive white space (Apple's signature) */
 }
 
 .section-heading h2 {
     font-size: 3.2rem;
-    letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    color: var(--black);
+}
+
+.section-heading p {
+    font-size: 1.3rem;
+    color: var(--gray);
 }
 
 /* ==========================================
-   CARDS (Minimalist Luxury)
+   CARDS GRID
    ========================================== */
 
 .card {
-    background: var(--bg-white);
-    border-radius: 24px; /* Soft, large corners */
-    overflow: hidden;
-    box-shadow: var(--shadow-premium);
-    transition: var(--transition-smooth);
-    border: 1px solid rgba(0,0,0,0.02);
+    background: var(--white);
+    border-radius: 24px; /* Softer, larger corners */
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0,0,0,0.03); /* Subtle definition */
 }
 
 .card:hover {
-    transform: translateY(-12px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-12px) scale(1.01);
+    box-shadow: var(--shadow-lg);
 }
 
 .card-content {
-    padding: 2.5rem;
+    padding: 2.5rem; /* More internal breathing room */
 }
 
 .card-title {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 1.7rem;
     letter-spacing: -0.02em;
 }
 
 /* ==========================================
-   ADMIN & UTILITIES
+   FOOTER
+   ========================================== */
+
+footer {
+    background: var(--gray-light); /* Light footer looks more modern */
+    color: var(--gray-dark);
+    padding: 6rem 2rem;
+    margin-top: 0; /* Clean break */
+}
+
+footer a {
+    color: var(--maroon);
+}
+
+/* ==========================================
+   ADMIN PANEL
    ========================================== */
 
 .admin-card {
     border-radius: 20px;
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0,0.05);
+    padding: 3rem;
 }
 
-.form-group input {
-    background: #f5f5f7; /* Apple's input background */
-    border: none;
-    height: 52px;
+.form-group input,
+.form-group textarea {
+    background: var(--gray-light); /* Muted input fields */
+    border: 1px solid transparent;
     border-radius: 12px;
 }
 
-/* ==========================================
-   RESPONSIVE (Fluid)
-   ========================================== */
-
-@media (max-width: 768px) {
-    .slide-overlay h1 { font-size: 2.8rem; }
-    .container { padding: 4rem 1.5rem; }
+.form-group input:focus {
+    background: var(--white);
+    border-color: var(--maroon);
 }
