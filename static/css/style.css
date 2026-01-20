@@ -1,102 +1,118 @@
-/* ==========================================
-   CLAYVILLE SDA CHURCH - POLISHED & FIXED
-   Fixes: Visibility, Hero Display, Form Layout
-   ========================================== */
+/* ==================================================
+   CLAYVILLE SDA CHURCH — CLEAN, STABLE, POLISHED
+   Design Language: Calm • Premium • Trustworthy
+   ================================================== */
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
 }
 
 :root {
     --maroon: #800020;
     --maroon-dark: #5a0017;
-    --maroon-light: #a6002a;
-    --gray: #86868b;
-    --gray-light: #f5f5f7;
-    --gray-dark: #1d1d1f;
-    --black: #000000;
+    --gray-900: #1d1d1f;
+    --gray-700: #515154;
+    --gray-500: #86868b;
+    --gray-100: #f5f5f7;
     --white: #ffffff;
-    --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+    --black: #000000;
+
+    --radius-sm: 12px;
+    --radius-lg: 20px;
+
+    --shadow-sm: 0 4px 20px rgba(0,0,0,0.06);
+    --shadow-md: 0 12px 40px rgba(0,0,0,0.08);
     --shadow-lg: 0 30px 60px rgba(0,0,0,0.12);
-    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    color: var(--gray-dark);
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
     background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================
-   NAVIGATION (Fixed Visibility)
-   ========================================== */
+/* ==================================================
+   NAVIGATION
+   ================================================== */
 nav {
-    background: var(--white); /* Removed transparency to ensure links are visible */
-    border-bottom: 1px solid rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1.2rem 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    justify-content: space-between;
 }
 
 .logo-symbol {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     background: var(--maroon);
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .nav-links {
+    list-style: none;
     display: flex;
     gap: 2rem;
-    list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--gray-dark);
-    font-weight: 500;
     font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--gray-700);
     transition: var(--transition);
 }
 
-/* ==========================================
-   HERO SLIDER (Fixed Height & Display)
-   ========================================== */
+.nav-links a:hover {
+    color: var(--black);
+}
+
+/* ==================================================
+   HERO SLIDER
+   ================================================== */
 .hero-slider {
     position: relative;
-    height: 600px; /* Reset to your original height so slides return */
     width: 100%;
-    background: #1a1a1a;
+    height: 600px;
     overflow: hidden;
+    background: #111;
 }
 
 .slide {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    inset: 0;
     background-size: cover;
     background-position: center;
-    display: block !important; /* Forces display */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
@@ -106,43 +122,48 @@ nav {
 
 .slide-overlay {
     position: absolute;
-    z-index: 2;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.4); /* Darker overlay so text is 100% visible */
+    inset: 0;
+    background: rgba(0,0,0,0.45);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--white);
     text-align: center;
     padding: 2rem;
+    color: var(--white);
 }
 
 .slide-overlay h1 {
-    font-size: 3.5rem;
+    font-size: 3.4rem;
     font-weight: 800;
     letter-spacing: -0.03em;
-    margin-bottom: 1rem;
+    max-width: 900px;
 }
 
-/* ==========================================
-   BUTTONS (Nike Shape, Fixed Size)
-   ========================================== */
+/* ==================================================
+   BUTTONS
+   ================================================== */
 .btn {
-    padding: 12px 28px;
-    border-radius: 980px; /* The Nike Pill Shape */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border-radius: 999px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+    border: none;
     transition: var(--transition);
     text-decoration: none;
-    display: inline-block;
-    border: none;
 }
 
 .btn-primary {
     background: var(--maroon);
     color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--maroon-dark);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -151,70 +172,100 @@ nav {
     border: 1px solid var(--black);
 }
 
-/* ==========================================
-   SECTIONS & "SEND US A MESSAGE" (Fixed)
-   ========================================== */
+.btn-secondary:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+/* ==================================================
+   LAYOUT / SECTIONS
+   ================================================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem; /* Reset padding so content isn't "gone" */
+    padding: 5rem 2rem;
 }
 
-.admin-card, .contact-form-container {
+.admin-card,
+.contact-form-container {
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
-    margin-top: 2rem;
+    padding: 2.8rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
 }
 
+/* ==================================================
+   FORMS
+   ================================================== */
 .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left; /* Ensures labels are visible */
+    margin-bottom: 1.6rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 1rem;
-    background: var(--gray-light);
+    border-radius: var(--radius-sm);
     border: 1px solid transparent;
-    border-radius: 12px;
+    background: var(--gray-100);
     font-size: 1rem;
+    transition: var(--transition);
 }
 
-/* ==========================================
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--maroon);
+    background: var(--white);
+}
+
+/* ==================================================
    CARDS
-   ========================================== */
+   ================================================== */
 .card {
     background: var(--white);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
 }
 
-/* ==========================================
+/* ==================================================
    FOOTER
-   ========================================== */
+   ================================================== */
 footer {
     background: var(--black);
     color: var(--white);
-    padding: 4rem 2rem;
+    padding: 4.5rem 2rem;
     text-align: center;
+    font-size: 0.9rem;
 }
 
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
 @media (max-width: 768px) {
-    .slide-overlay h1 { font-size: 2.2rem; }
-    .hero-slider { height: 450px; }
+    .hero-slider {
+        height: 450px;
+    }
+
+    .slide-overlay h1 {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        gap: 1.4rem;
+    }
 }
