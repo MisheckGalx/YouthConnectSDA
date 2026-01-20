@@ -34,10 +34,10 @@ def init_db():
     c.execute("SELECT * FROM users WHERE username='admin'")
     if not c.fetchone():
         from werkzeug.security import generate_password_hash
-        password_hash = generate_password_hash('clayville007')
+        password_hash = generate_password_hash('Clayville007')
         c.execute("INSERT INTO users (username, password_hash) VALUES (?, ?)", 
                  ('admin', password_hash))
-        print("✓ Admin user created (username: admin, password: clayville007)")
+        print("✓ Admin user created (username: admin, password: Clayville007)")
     
     # Insert sample events if table is empty
     c.execute("SELECT COUNT(*) FROM events")
