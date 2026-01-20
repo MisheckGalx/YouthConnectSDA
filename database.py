@@ -37,7 +37,7 @@ def init_db():
         password_hash = generate_password_hash('clayville007')
         c.execute("INSERT INTO users (username, password_hash) VALUES (?, ?)", 
                  ('admin', password_hash))
-        print("✓ Admin user created (username: admin, password: clayville2024)")
+        print("✓ Admin user created (username: admin, password: clayville007)")
     
     # Insert sample events if table is empty
     c.execute("SELECT COUNT(*) FROM events")
