@@ -171,7 +171,7 @@ if __name__ == '__main__':
     print("\nADMIN LOGIN:")
     print("  URL: http://localhost:5000/admin")
     print("  Username: admin")
-    print("  Password: clayville2024")
+    print("  Password: Clayville007")
     print("\nPress CTRL+C to stop the server")
     print("="*60 + "\n")
     
